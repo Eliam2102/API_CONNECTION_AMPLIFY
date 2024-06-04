@@ -6,8 +6,8 @@ async function agregarCancion(titulo, artista, archivo, imagen) {
 }
 
 //obtenerLista de cnaciones
-async function obtenerLista() {
-    return await cancion.obtenerLista();
+async function getCanciones() {
+    return await cancion.getAll();
 }
 
 async function addSongToFavorites(id) {
@@ -20,7 +20,7 @@ async function getSongById(id) {
 
 module.exports = {
     agregarCancion,
-    obtenerLista,
+    getCanciones,
     addSongToFavorites,
     getSongById
 };

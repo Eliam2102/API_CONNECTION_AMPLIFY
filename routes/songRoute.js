@@ -8,9 +8,9 @@ const upload = multer({ storage: storage });
 const {agregarCancion} = require ('../models/songModel.js')
 
 // Rutas para canciones
-router.get('/getList', (req, res) => {
-    console.log('Solicitud GET recibida en /getList');
-    songController.obtenerLista(req, res);
+router.get('/getAllSong', (req, res) => {
+    console.log('Solicitud GET recibida en /getAllSong');
+    songController.getCanciones(req, res);
 });
 
 //Agregar canciones

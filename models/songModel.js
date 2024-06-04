@@ -17,16 +17,14 @@ async function agregarCancion(titulo, artista, archivo, imagen) {
 }
 
 // Función para obtener la lista de canciones
-async function obtenerLista() {
-    const conexion = await obtenerConexion();
+async function getAll() {
     try {
-        const [results] = await conexion.query('SELECT * FROM canciones');
-        return results;
+        console.log('Obteniendo todas las canciones de la biblioteca');
+        const response = await axios.get(`${process.env.BASE_URL}/songs/getAllSong`);
+        return response.data;
     } catch (error) {
-        console.error('Error al buscar las canciones', error);
-        throw error;
-    } finally {
-        conexion.release();
+        console.error('Error al obtener las canciones de la biblioteca:', error.message);
+        return [];
     }
 }
 
@@ -62,5 +60,5 @@ async function obtenerCancionPorId(id) {
 module.exports = {
     agregarCancion,
     agregarCancionAFavoritos,
-    obtenerLista
+    getAll
 };

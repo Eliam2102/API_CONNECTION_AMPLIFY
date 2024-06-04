@@ -19,6 +19,13 @@ app.use(express.json());
 // Rutas generales
 app.use('/', routes);
 
+//Ruta de canciones
+const songRoute =require('./routes/songRoute');
+app.use('/songs', (req, res, next) =>{
+    console.log('Solicitud recibida en /songs');
+    next();
+}, songRoute);
+
 // Puerto en el que escucha el servidor
 const PORT = process.env.PORT || 3002;
 app.listen(PORT, () => {
