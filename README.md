@@ -14,3 +14,5 @@ recordar que usamos multer par el manejo de archivos
     "jsonwebtoken": "^9.0.2",
     "multer": "^1.4.5-lts.1",
     "mysql2": "^3.9.4"
+Esta es la API del proyecto de amplify necesaria para probarla:
+https://github.com/Eliam2102/Amplify/tree/main
